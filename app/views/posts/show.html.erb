@@ -1,0 +1,12 @@
+<h1><%= @post.title %></h1>
+
+<p><%= @post.body_with_markdown %></p>
+
+<%= link_to t('link.edit'), edit_post_path(@post) %> |
+<%= link_to t('link.back'), posts_path %>
+
+<h3><%= t('post.comments_size', size: comments_size(@post)) %></h3>
+
+<%= render "comments/form" %>
+
+<%= render @post.comments %>

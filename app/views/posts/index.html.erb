@@ -1,0 +1,11 @@
+<% @posts.reverse.each do |post| %>
+    <h1><%= link_to post.title.capitalize, post %></h1>
+    <span><%= link_to t('link.edit'), edit_post_path(post) %> | <%= link_to t('link.destroy'), post, method: :delete, data: { confirm: t('post.are_you_sure') } %></span>
+    <hr>
+    <%= resume_body(post.body_with_markdown) %>
+    <hr>
+    <span><%= t('post.created_at', time: post.time, comments_size: comments_size(post)) %></span>
+<% end %>
+
+<br>
+<%= link_to t('post.new_post'), new_post_path %>
