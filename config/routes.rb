@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  #resources :blogs, only: [:new, :create, :edit, :update]
-  scope :blogs, as: :blog do
-    get '/new' => 'blogs#new'
-    post '/' => 'blogs#create'
-    get '/edit' => 'blogs#edit'
-    put '/' => 'blogs#update'
-  end
+  resources :blogs, only: [:new, :create, :edit, :update]
+  #scope :blogs, as: :blog do
+  #  get '/new' => 'blogs#new'
+  #  post '/' => 'blogs#create'
+  #  get '/edit' => 'blogs#edit'
+  #  put '/:id' => 'blogs#update'
+  #end
 
   # Fix this
   get 'install' => 'install#index', as: :install

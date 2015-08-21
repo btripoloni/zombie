@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.build(comment_params)
 		@comment.save
-		flash[:notice] = "The Comment has registed with sucess!"
 		redirect_to @post
 	end
 

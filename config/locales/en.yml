@@ -48,6 +48,9 @@ en:
     created_at: "Created at %{time} | %{comments_size}"
     comment: "comment"
     submit: "Create Post"
+    success: "Post was successfully created."
+    updated: "Post was successfully updated."
+    destroyed: "Post was successfully destroyed."
 
   application:
     home: "Home"

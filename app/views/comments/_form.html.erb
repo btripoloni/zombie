@@ -1,5 +1,16 @@
 <span>Create a new comment</span>
 <%= form_for [@post, Comment.new] do |f|%>
+	<% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 	<%= f.label :name %><br>
 	<%= f.text_field :name %><br>
 	<%= f.label :email %><br>

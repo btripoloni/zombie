@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
 	has_many :comments
 	validates_presence_of :title, :body
+	self.per_page = 10
+	acts_as_taggable
 
 	def time
 		created_at.strftime("%Y-%m-%d at: %H:%M:%S")

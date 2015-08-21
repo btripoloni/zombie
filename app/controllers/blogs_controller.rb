@@ -34,10 +34,8 @@ class BlogsController < ActionController::Base
     respond_to do |format|
       if @blog.update(blog_params)
         format.html { redirect_to admin_path, notice: t('blog.update') }
-        format.json { render :show, status: :ok, location: @blog }
       else
         format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
