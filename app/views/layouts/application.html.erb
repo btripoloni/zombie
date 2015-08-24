@@ -11,6 +11,10 @@
 <%= link_to t("application.admin"), admin_path %>
 <p id="notice"><%= notice %></p>
 <p id="alert"><%= alert %></p>
+
+<h1><%= blog.name %></h1>
+<h3><%= blog.description %></h3>
+
 <%= yield %>
 
 </body>
