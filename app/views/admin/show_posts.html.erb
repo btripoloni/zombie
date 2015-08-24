@@ -1,0 +1,12 @@
+<td>
+  <%= form_tag destroy_posts_path do %>
+    <% @post.each do |post|%>
+      <div class="field">
+        <input type="checkbox" name="post[<%= post.id %>]" value="<%= post.id %>" >
+        <span><%= post.title %></span>
+        <%= link_to t('link.edit'), edit_post_path(post) %>
+      </div>
+    <% end %>
+    <input type="submit">
+  <% end %>
+</td>

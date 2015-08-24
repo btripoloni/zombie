@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
 	end
 
 	def to_param
-		"#{id}/#{title}"
+		"#{id}-#{title}"
 	end
 
 	private

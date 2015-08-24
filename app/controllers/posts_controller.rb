@@ -61,6 +61,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy_multiple_posts
+    params[:post].each do |key, value|
+      @post = Post.find(value)
+      @post.destroy
+    end
+    redirect_to admin_show_posts_path, notice: t('post.multiple_destroyed', size: params[:post].size)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

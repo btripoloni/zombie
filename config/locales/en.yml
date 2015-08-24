@@ -51,6 +51,7 @@ en:
     success: "Post was successfully created."
     updated: "Post was successfully updated."
     destroyed: "Post was successfully destroyed."
+    multiple_destroyed: "%{size} posts has been deleted."
 
   application:
     home: "Home"

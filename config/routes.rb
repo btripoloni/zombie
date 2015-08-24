@@ -1,18 +1,9 @@
 Rails.application.routes.draw do
   resources :blogs, only: [:new, :create, :edit, :update]
-  #scope :blogs, as: :blog do
-  #  get '/new' => 'blogs#new'
-  #  post '/' => 'blogs#create'
-  #  get '/edit' => 'blogs#edit'
-  #  put '/:id' => 'blogs#update'
-  #end
-
-  # Fix this
-  get 'install' => 'install#index', as: :install
-  post 'install' => 'install#create', as: :infos
 
   scope :admin, as: :admin do
     get '/' => 'admin#index'
+    get '/show_posts' => 'admin#show_posts'
     scope :edit_blog_info, as: :blog do
       get '/' => 'admin#edit_blog_info_new'
       post '/' => 'admin#edit_blog_info_updte'
@@ -22,6 +13,7 @@ Rails.application.routes.draw do
   resources :posts do
     post "comments" => 'comments#create'
   end
+  post "post/destroy_posts" => 'posts#destroy_multiple_posts', as: :destroy_posts
   delete "comments/:id" => 'comments#delete', as: :comment
   root 'posts#index'
   
