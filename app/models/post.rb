@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 	acts_as_taggable
 
 	def time
-		created_at.strftime("%Y-%m-%d at: %H:%M:%S")
+		created_at.strftime("%Y/%m/%d")
 	end
 
 	def body_with_markdown

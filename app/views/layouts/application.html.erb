@@ -2,20 +2,38 @@
 <html>
 <head>
   <title>Zombie</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to t("application.home"), root_path %>
-<%= link_to t("application.admin"), admin_path %>
-<p id="notice"><%= notice %></p>
-<p id="alert"><%= alert %></p>
 
-<h1><%= blog.name %></h1>
-<h3><%= blog.description %></h3>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li><%= link_to t("application.home"), root_path %></li>
+      <li><%= link_to t("application.admin"), admin_path %></li>
+      <li><%= link_to t('post.new_post'), new_post_path %></li>
+    </ul>
+  </div>
+</nav>
 
-<%= yield %>
+<div class="container">
+  <p id="alert alert-success"><%= notice %></p>
+  <p id="alert alert-danger"><%= alert %></p>
+</div>
 
+<div class="container header">
+  <h1><%= blog.name.capitalize %></h1>
+  <h3><%= blog.description.capitalize %></h3>
+</div>
+
+<div class="container posts">
+  <%= yield %>
+  <div class="credit text-center">
+    <span>Powered by Zombie</span>
+  </div>
+</div>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

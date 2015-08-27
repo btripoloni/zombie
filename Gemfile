@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-
-
+gem 'bundler', '>= 1.8.4'
 gem 'rails', '4.2.0'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
@@ -26,7 +25,6 @@ gem 'acts-as-taggable-on'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -38,3 +36,7 @@ group :development, :test do
   gem 'spring'
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-quill'
+end

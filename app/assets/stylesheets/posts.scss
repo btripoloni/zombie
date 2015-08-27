@@ -1,3 +1,20 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  background-color: rgb(210, 210, 210) !important;
+}
+
+.header{
+  background-image: url(http://40.media.tumblr.com/80010e4645b869540a5c91644d337f2d/tumblr_nqx92jMV3i1tubinno1_1280.jpg);
+  color: #fff;
+  padding: 50px;
+}
+
+.posts{
+  background: rgb(255, 255, 255);
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}

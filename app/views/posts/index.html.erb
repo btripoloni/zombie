@@ -1,13 +1,17 @@
 <% @posts.reverse.each do |post| %>
-    <h1><%= link_to post.title.capitalize, post %></h1>
-    <span>Tags: <%= post.tag_list %></span><br>
-    <span><%= link_to t('link.edit'), edit_post_path(post) %> | <%= link_to t('link.destroy'), post, method: :delete, data: { confirm: t('post.are_you_sure') } %></span>
-    <hr>
-    <%= resume_body(post.body_with_markdown) %>
-    <hr>
-    <span><%= t('post.created_at', time: post.time, comments_size: comments_size(post)) %></span>
+  <div class="row">
+    <div class="col-md-12">
+      <%= tag_helper(post.tag_list) %>
+      <div class="pull-right">
+        <%= comment_helper(post)%>
+      </div>
+      <h1><%= link_to post.title.capitalize, post %></h1>
+      <span><%= t('post.posted_by', author: "Eu", time: post.time) %></span>
+      <span><% link_to t('link.edit'), edit_post_path(post) %>  <% link_to t('link.destroy'), post, method: :delete, data: { confirm: t('post.are_you_sure') } %></span>
+      <p><%= resume_body(post) %></p>
+      <%= link_to t('post.continue'), post, class: "btn btn-primary" if post.body_with_markdown.split(' ').size > 100 %>
+      <hr>
+    </div>
+  </div>
 <% end %>
-
-<br>
-<%= link_to t('post.new_post'), new_post_path %>
 <%= will_paginate @posts %>

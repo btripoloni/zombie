@@ -79,4 +79,8 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :body, :tag_list)
     end
+
+    def render_admin
+    render :layout => 'admin'
+  end
 end

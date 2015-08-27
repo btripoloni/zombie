@@ -45,13 +45,14 @@ en:
     editing_post: "Editing Post"
     comments_size: "This post has %{size}"
     are_you_sure: "Are You Sure?"
-    created_at: "Created at %{time} | %{comments_size}"
+    posted_by: "Posted by %{author} on %{time}"
     comment: "comment"
     submit: "Create Post"
     success: "Post was successfully created."
     updated: "Post was successfully updated."
     destroyed: "Post was successfully destroyed."
     multiple_destroyed: "%{size} posts has been deleted."
+    continue: "Continue reading"
 
   application:
     home: "Home"
