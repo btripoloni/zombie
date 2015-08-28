@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :authors
   resources :blogs, only: [:new, :create, :edit, :update]
 
   scope :admin, as: :admin do

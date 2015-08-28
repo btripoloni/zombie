@@ -16,7 +16,9 @@
     <%= f.text_field :title %>
   </div>
   <%= f.hidden_field :body, id: "hidden-post"%>
-  <div id="editor"></div>
+  <div id="editor">
+    <%= @post.body.html_safe %>
+  </div>
   <div class="field">
     <%= f.label :tag_list %><br>
     <%= f.text_field :tag_list %>

@@ -3,7 +3,7 @@ class BlogsController < ActionController::Base
 
   # GET /blogs/new
   def new
-    if Blog.first
+    unless Blog.first
       @blog = Blog.new
     else
       redirect_to admin_path, notice: t("blog.failed_wellcome")

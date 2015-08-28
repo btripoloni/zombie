@@ -2,16 +2,15 @@
 <html>
 <head>
   <title>Zombie - Admin</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p id="notice"><%= notice %></p>
-<p id="alert"><%= alert %></p>
-<%= link_to "Admin", admin_path %>
-<%= link_to "Preview Blog", root_path %>
-<%= yield %>
-
+  <p id="notice"><%= notice %></p>
+  <p id="alert"><%= alert %></p>
+  <%= link_to "Admin", admin_path %>
+  <%= link_to "Preview Blog", root_path %>
+  <%= yield %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

@@ -15,7 +15,8 @@ gem 'sanitize'
 gem 'rails-i18n'
 gem 'will_paginate'
 gem 'acts-as-taggable-on'
-
+gem 'devise'
+gem 'gravatar_image_tag'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

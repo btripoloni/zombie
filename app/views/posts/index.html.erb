@@ -14,4 +14,8 @@
     </div>
   </div>
 <% end %>
+<% if @posts.empty? %>
+  <h1 class="text-center">This Blog don't have posts!</h1>
+  <hr/>
+<% end %>
 <%= will_paginate @posts %>

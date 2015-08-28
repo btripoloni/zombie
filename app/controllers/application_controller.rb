@@ -14,7 +14,12 @@ class ApplicationController < ActionController::Base
   def startup
     cache = Rails.cache
     unless cache.read('blog')
-      cache.write('blog', Blog.first)
+      info = Blog.first
+      if info
+        cache.write('blog', info)
+      else
+        redirect_to new_blog_path
+      end
     end
   end
 end
